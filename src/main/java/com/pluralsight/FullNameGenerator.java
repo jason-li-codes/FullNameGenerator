@@ -39,9 +39,9 @@ public class FullNameGenerator {
 
         // for first and last names, capitalize the first and lowercase the other letters
         // for middle names, capitalize the first letter and add a period
-        first = first.toUpperCase().charAt(0) + first.substring(1);
+        first = first.toUpperCase().charAt(0) + first.substring(1).toLowerCase();
         middle = middle.toUpperCase().charAt(0) + ".";
-        last = last.toUpperCase().charAt(0) + last.substring(1);
+        last = last.toUpperCase().charAt(0) + last.substring(1).toLowerCase();
 
         // create a string fullName made up of the first, middle, and last names
         String fullName = String.join(" ", first, middle, last);
