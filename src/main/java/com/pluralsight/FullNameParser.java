@@ -65,9 +65,9 @@ public class FullNameParser {
         }
 
         // cleans up the names, capitalizing first letters and lowercasing others
-        first = first.toUpperCase().charAt(0) + first.substring(1);
-        middle = middle.toUpperCase().charAt(0) + middle.substring(1);
-        last = last.toUpperCase().charAt(0) + last.substring(1);
+        first = first.toUpperCase().charAt(0) + first.substring(1).toLowerCase();
+        middle = middle.toUpperCase().charAt(0) + middle.substring(1).toLowerCase();
+        last = last.toUpperCase().charAt(0) + last.substring(1).toLowerCase();
 
         // returns new list of parsed names
         return new String[]{first, middle, last};
