@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.util.Scanner;
 
-public class FullNameApplication {
+public class FullNameGenerator {
 
     public static void main(String[] args) {
 
