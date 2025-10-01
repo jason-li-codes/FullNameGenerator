@@ -35,16 +35,18 @@ public class FullNameGenerator {
         first = first.toUpperCase().charAt(0) + first.substring(1).toLowerCase();
         last = last.toUpperCase().charAt(0) + last.substring(1).toLowerCase();
 
-        // create a string fullName made up of the first and last names
-        String fullName = String.join(" ", first, last);
+        // create a string fullName made up of the first name
+        String fullName = first;
 
         // for middle names, capitalize the first letter and add a period only if it is not empty
-        // then add it to fullName after the first name by finding the index of the space
+        // then add it to fullName after the first name
         if (!middle.isEmpty()) {
             middle = middle.toUpperCase().charAt(0) + ".";
-            fullName = fullName.substring(0, fullName.indexOf(" ")) + " " + middle +
-                    fullName.substring(fullName.indexOf(" ") + 1);
+            fullName += " " + middle;
         }
+
+        // add last name afterwards
+        fullName += " " + last;
 
         // only add a suffix if it exists
         if (!suffix.isEmpty()) {
