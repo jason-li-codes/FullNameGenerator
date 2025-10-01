@@ -11,7 +11,7 @@ public class FullNameParser {
 
         // prompts user for full name
         System.out.println("Please enter your full first, middle, and last name: ");
-        String fullName = input.nextLine();
+        String fullName = input.nextLine().trim();
 
         // calls method fullNameParser to separate the names
         String[] parsedNames = fullNameParser(fullName);
@@ -35,7 +35,6 @@ public class FullNameParser {
     public static String[] fullNameParser(String fullName) {
 
         // trims fullName, then separates them with split()
-        fullName = fullName.trim();
         String[] separatedNames = fullName.split(" ");
 
         // creates empty strings
@@ -46,19 +45,19 @@ public class FullNameParser {
         // assigns split names to empty strings depending on how many there are
         switch (separatedNames.length) {
             case 1:
-                first = separatedNames[0];
+                first = separatedNames[0].trim();
                 middle = "(none)";
                 last = "(none)";
                 break;
             case 2:
-                first = separatedNames[0];
+                first = separatedNames[0].trim();
                 middle = "(none)";
-                last = separatedNames[1];
+                last = separatedNames[1].trim();
                 break;
             case 3:
-                first = separatedNames[0];
-                middle = separatedNames[1];
-                last = separatedNames[2];
+                first = separatedNames[0].trim();
+                middle = separatedNames[1].trim();
+                last = separatedNames[2].trim();
                 break;
             default:
                 System.out.println("You have not entered anything meaningful. Please restart.");
